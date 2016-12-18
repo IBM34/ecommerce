@@ -1,0 +1,21 @@
+<div id="menu" style="text-align:center">
+<h1> {{titre}} </h1> <br/>
+<nav>
+  <a [routerLink]="['/rechercheMarques']"> Recherche par marques </a> <br/>
+  <a [routerLink]="['/rechercheTypes']"> Recherche par types </a>
+  <br/><br/>
+  <input (keyup)="setMarque(choixMarque.value)" value="Apple" #choixMarque />
+  <a [routerLink]="['/rechercheParMarque', marque]"> Recherche par marque </a>
+  <br/>
+  <input (keyup)="setPrixmin(choixType.value)" value="0" #choixPrix />
+  <input (keyup)="setPrixmax(choixType.value)" value="0" #choixPrix />
+  <a [routerLink]="['/rechercheParMarquePop', marque, prixmin, prixmax]"> Par marque et popularité</a>
+<br/>
+<br/>
+ <input (keyup)="setType(choixType.value)" value="telephone" #choixType />
+  <a [routerLink]="['/rechercheParType', type]"> Recherche par type </a>
+
+</nav>
+<br/>
+</div>
+<router-outlet></router-outlet>

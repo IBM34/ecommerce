@@ -1,0 +1,30 @@
+<script>
+var total= 2;
+</script>
+<div id="Produits" *ngFor="let item of items">
+<div id="Produit">
+  <HR size=2px>
+	<div id="imageProduit" >
+		<img [src]="item.url" style="width:304px;height:228px;">
+	</div>
+	<div id="caract">
+	<p>Nom du produit : {{ item.nom }} </p>
+	<p>Type : {{ item.type }}</p>
+        <p>Marque : {{ item.marque }}</p>
+	<p>Prix : {{ item.price }} euros</p>
+	<p>Quantitée : {{ item.quantite }}</p>
+
+
+
+  <input [routerLink]="['/retirerPanier', item.id]" type="button" [name]= "item.id" value="Retirer du panier" class="button" />
+	</div>
+	<script>
+	total =  {{ item.quantite  * item.price }}
+	</script>
+</div>
+</div>
+<script>
+alert(total);
+</script>
+
+<HR size=2px>

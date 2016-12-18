@@ -1,0 +1,43 @@
+<ul>
+  <li *ngFor="let item of items"> {{ item.marque }} </li>
+</ul>
+
+
+<div>
+  <script src="script.js"></script>
+
+<div id="Produits" *ngFor="let item of items">
+<div id="Produit">
+
+    <HR size=2px>
+	<div id="imageProduit" >
+		<img [src]="item.url" style="width:304px;height:228px;">
+	</div>
+
+	<div id="caract">
+	<p>Nom du produit : {{ item.nom }} </p>
+	<p>Type : {{ item.type }}</p>
+        <p>Marque : {{ item.marque }}</p>
+	<p>Prix : {{ item.price }} euros</p>
+	<input type="button" id="demo"
+  [name]= "item.id" value="Ajouter au panier"  >
+
+
+  <script>
+  var total=1;
+  alert(total);
+  </script>
+
+
+
+
+
+	</div>
+</div>
+</div>
+
+
+
+</div>
+
+<HR size=2px>

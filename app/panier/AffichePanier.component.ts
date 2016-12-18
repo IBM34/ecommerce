@@ -1,0 +1,23 @@
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import { AfficheService } from './Affiche.service';
+
+@Component({
+	selector: 'menu2',
+	templateUrl: 'templates/AffichePanier.html',
+	styleUrls: ['styles/menu.css']
+})
+
+export class AffichePanierComponent {
+public items :any;
+       public constructor(private recherche :AfficheService) {}
+
+  ngOnInit() {
+       		  
+                    this.recherche.getJSON("ids")
+		    .subscribe(res => this.items = res,
+       				       err => console.error(err),
+       				       	   () => console.log('done'));
+
+}
+}

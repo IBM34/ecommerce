@@ -1,0 +1,37 @@
+[
+         {
+            "id":"1",
+      "type":"ordinateur",
+      "marque":"Apple",
+      "nom":"macbook",
+      "price":1250,
+      "nbVentes":"45555",
+      "evaluation":"4"	,
+      "url" : "http://store.storeimages.cdn-apple.com/4662/as-images.apple.com/is/image/AppleInc/aos/published/images/M/AC/MACBOOKPRO/MACBOOKPRO?wid=1200&hei=630&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=jBFkr3",
+            "quantite":2
+
+         },
+         {
+            "id":"2",
+      "type":"telephone",
+      "marque":"samsung",
+      "nom":"galaxy s7",
+      "price":600,
+      "nbVentes":"45555",
+      "evaluation":"4",
+      "url" : "http://www.samsung.com/ca_fr/consumer/mobile-devices/smartphones/galaxy-s/galaxy-s7/images/galaxy-s7-edge_gallery_front_gold_s3.png",
+            "quantite":3
+
+         },
+         {
+            "id":"3",
+      "type":"console",
+      "marque":"sony",
+      "nom":"ps4",
+      "price":400,
+      "nbVentes":"45555",
+      "evaluation":"4",
+      "url" : "https://psmedia.playstation.com/is/image/psmedia/ps4-overview-screen-01-eu-06sep16?$MediaCarousel_LargeImage$",
+            "quantite":1
+         }
+]

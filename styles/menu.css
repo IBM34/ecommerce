@@ -1,0 +1,30 @@
+* {font-size: 24; font-style: bold}
+
+#Produit {
+width : 100%;
+display: inline-block;
+}
+
+#caract {
+float : right;
+width : 75%;
+}
+
+#imageProduit {
+float : left;
+width : 25%;
+}
+
+.button {
+    color: green;
+}
+
+
+
+
+
+
+
+
+
+
