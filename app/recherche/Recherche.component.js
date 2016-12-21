@@ -19,7 +19,7 @@ var RechercheComponent = (function () {
     RechercheComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params.subscribe(function (params) {
-            _this.recherche.getJSON("produits/" + params['nom'] + "/" + params['marque'] + "/" + params['type'])
+            _this.recherche.getJSON("produits/" + params['nom'] + "/" + params['marque'] + "/" + params['type'] + "/" + params['prixmin'] + "/" + params['prixmax'])
                 .subscribe(function (res) { return _this.items = res; }, function (err) { return console.error(err); }, function () { return console.log('done'); });
         });
     };

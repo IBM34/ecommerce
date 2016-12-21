@@ -1,5 +1,13 @@
-<div id="Produits" *ngFor="let item of items">
-<div id="Produit">
+@Directive({
+  selector: '[var]',
+  exportAs: 'var'
+})
+class VarDirective {
+  @Input() var:any;
+}
+<h1> {{titre}} </h1> <br/>
+<div id="Produits"  #aVariable="total" total=0>
+<div id="Produit" *ngFor="let item of items">
   <HR size=2px>
 	<div id="imageProduit" >
 		<img [src]="item.url" style="width:304px;height:228px;">
@@ -10,9 +18,11 @@
         <p>Marque : {{ item.marque }}</p>
 	<p>Prix : {{ item.price }} euros</p>
 	<p>Quantitée : {{ item.quantite }}</p>
+	{{ aVariable.total }} = {{ aVariable.total }} + ( {{ item.price }} * {{ item. quantite }} )
   <input [routerLink]="['/retirerPanier', item.id]" type="button" [name]= "item.id" value="Retirer du panier" class="button" />
 	</div>
 </div>
+<h2> Total du Panier : </h2>
 </div>
 <router-outlet></router-outlet>
 

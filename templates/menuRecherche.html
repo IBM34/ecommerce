@@ -14,7 +14,9 @@
   <option value="" >Tous</option> 
   <option *ngFor="let item of items" [value]="item.type">{{ item.type }}</option>
 </select>
-<input [routerLink]="['/recherche', nom,marque,type]" type="button" id="demo" value="Recherche" class="button">
+<input (keyup)="setPrixMin(PrixMin.value)" placeholder="Prix min" size="6" #PrixMin />
+<input (keyup)="setPrixMax(PrixMax.value)" placeholder="Prix max" size="6" #PrixMax />
+<input [routerLink]="['/recherche', nom, marque,type, prixmin, prixmax]" type="button" id="demo" value="Recherche" class="button">
 </div>
 </nav>
 <br/>

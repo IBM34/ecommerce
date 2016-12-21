@@ -7,7 +7,7 @@ import {RechercheComponent} from './Recherche.component';
 
 const appRoutes: Routes = [
 { path: 'ajoutPanier/:id', component: AjoutAuPanierComponent},
-{ path: 'recherche/:nom/:marque/:type', component: RechercheComponent}
+{ path: 'recherche/:nom/:marque/:type/:prixmin/:prixmax', component: RechercheComponent}
 ];
 
 export const appRoutingProviders: any[] = [ ];

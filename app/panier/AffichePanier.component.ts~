@@ -7,8 +7,16 @@ import { AfficheService } from './Affiche.service';
 	styleUrls: ['styles/menu.css']
 })
 
+@Directive({
+  selector: '[total]',
+  exportAs: 'total'
+})
+class TotalDirective {
+  @Input() total:any;
+}
+
 export class AffichePanierComponent {
-titre = 'Panier';
+titre = 'Votre Panier';
 public items :any;
        public constructor(private recherche :AfficheService) {}
 

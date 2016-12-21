@@ -4,7 +4,7 @@ var AjoutAuPanier_component_1 = require('./AjoutAuPanier.component');
 var Recherche_component_1 = require('./Recherche.component');
 var appRoutes = [
     { path: 'ajoutPanier/:id', component: AjoutAuPanier_component_1.AjoutAuPanierComponent },
-    { path: 'recherche/:nom/:marque/:type', component: Recherche_component_1.RechercheComponent }
+    { path: 'recherche/:nom/:marque/:type/:prixmin/:prixmax', component: Recherche_component_1.RechercheComponent }
 ];
 exports.appRoutingProviders = [];
 exports.routingRecherche = router_1.RouterModule.forChild(appRoutes);

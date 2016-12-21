@@ -13,8 +13,8 @@ export class MenuRechercheComponent{
        marque :string;
        type :string;
        nom :string;
-      prixmin :number = 0;
-      prixmax :number = 1000;
+       prixmin :number;
+       prixmax :number;
        setMarque(value :string){
        		       this.marque=value;
        }
@@ -23,6 +23,12 @@ export class MenuRechercheComponent{
 	}
        setNom(value :string){
        this.nom=value;
+       }
+       setPrixMin(value :number){
+       this.prixmin=value;
+       }
+       setPrixMax(value :number){
+       this.prixmax=value;
        }
     
 public items :any;

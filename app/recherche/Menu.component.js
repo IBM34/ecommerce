@@ -14,8 +14,6 @@ var MenuRechercheComponent = (function () {
     function MenuRechercheComponent(recherche) {
         this.recherche = recherche;
         this.titre = 'Recherche sur les produits';
-        this.prixmin = 0;
-        this.prixmax = 1000;
     }
     MenuRechercheComponent.prototype.setMarque = function (value) {
         this.marque = value;
@@ -25,6 +23,12 @@ var MenuRechercheComponent = (function () {
     };
     MenuRechercheComponent.prototype.setNom = function (value) {
         this.nom = value;
+    };
+    MenuRechercheComponent.prototype.setPrixMin = function (value) {
+        this.prixmin = value;
+    };
+    MenuRechercheComponent.prototype.setPrixMax = function (value) {
+        this.prixmax = value;
     };
     MenuRechercheComponent.prototype.ngOnInit = function () {
         var _this = this;

@@ -7,6 +7,7 @@ import { AfficheService } from './Affiche.service';
 	styleUrls: ['styles/menu.css']
 })
 
+
 export class AffichePanierComponent {
 titre = 'Votre Panier';
 public items :any;
