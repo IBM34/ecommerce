@@ -20,5 +20,4 @@ public items :any;
        				       	   () => console.log('done'));
                          })
                          }
-		console.log("appel a app get fait")
                          }

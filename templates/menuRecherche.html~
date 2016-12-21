@@ -2,21 +2,21 @@
 <h1> {{titre}} </h1> <br/>
 <nav>
 <div id="recherche">
-<input (keyup)="setNom(Nom.value)" placeholder="Entrez un nom de produit" #Nom />
+<input (keyup)="setNom(Nom.value)" placeholder="Entrez un nom de produit" #Nom style="height:30px" />
 
-<select class="form-control" (change)="setMarque(Marque.value)" name="Marque" #Marque>
+<select class="form-control" (change)="setMarque(Marque.value)" name="Marque" #Marque style="height:35px" >
   <option value="" disabled selected>Trier par marques</option>
   <option value="" >Toutes</option> 
   <option *ngFor="let item of items" [value]="item.marque">{{ item.marque }}</option>
 </select>
-<select class="form-control" (change)="setType(Type.value)" name="Type" #Type>
+<select class="form-control" (change)="setType(Type.value)" name="Type" #Type style="height:35px">
   <option value="" disabled selected>Trier par types</option>
   <option value="" >Tous</option> 
   <option *ngFor="let item of items" [value]="item.type">{{ item.type }}</option>
 </select>
-<input (keyup)="setPrixMin(PrixMin.value)" placeholder="Prix min" size="6" #PrixMin />
-<input (keyup)="setPrixMax(PrixMax.value)" placeholder="Prix max" size="6" #PrixMax />
-<input [routerLink]="['/recherche', nom,marque,type, prixmin, prixmax]" type="button" id="demo" value="Recherche" class="button">
+<input (keyup)="setPrixMin(PrixMin.value)" placeholder="Prix min" size="6" #PrixMin style=" height:30px"/>
+<input (keyup)="setPrixMax(PrixMax.value)" placeholder="Prix max" size="6" #PrixMax style=" height:30px"/>
+<input [routerLink]="['/recherche', nom, marque,type, prixmin, prixmax]" type="button" id="demo" value="Rechercher" style=" height:43px" class="button">
 </div>
 </nav>
 <br/>

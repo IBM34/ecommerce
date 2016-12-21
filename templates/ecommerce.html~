@@ -2,9 +2,9 @@
 <h1> {{titre}} </h1> <br/>
 
 <input [routerLink]="['/Recherche']" type="button" id="demo"
-  value="Recherche" class="button" style="width:200px; height:50px" class="button">
+  value="Recherche" class="button" style="width:200px; height:50px">
 <input [routerLink]="['/Panier']" type="button" id="demo"
-   value="Panier" class="button" style="width:200px; height:50px" class="button">
+   value="Panier" class="button" style="width:200px; height:50px">
 
 <router-outlet></router-outlet>
 </div>

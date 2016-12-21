@@ -1,6 +1,9 @@
-<div id="Produits" *ngFor="let item of items">
-<div id="Produit">
-
+<br/><br/>
+<div id="Produits">
+<div id="titre" style="text-align:center">
+   <b>Liste des Produits</b>
+</div>
+<div id="Produit" *ngFor="let item of items">
     <HR size=2px>
 	<div id="imageProduit" >
 		<img [src]="item.url" style="width:304px;height:228px;">
@@ -16,7 +19,6 @@
 	</div>
 </div>
 </div>
-
 
 
 

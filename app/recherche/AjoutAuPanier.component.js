@@ -25,7 +25,7 @@ var AjoutAuPanierComponent = (function () {
     };
     AjoutAuPanierComponent = __decorate([
         core_1.Component({
-            templateUrl: 'templates/AjoutAuPanier.html',
+            template: '<br/><br/><h2> Le produit à été ajouté au panier</h2>',
             styleUrls: ['styles/menu.css']
         }), 
         __metadata('design:paramtypes', [Recherche_service_1.RechercheService, router_1.ActivatedRoute])
