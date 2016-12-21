@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var Affiche_service_1 = require('../panier/Affiche.service');
+var Recherche_service_1 = require('./Recherche.service');
 var AjoutAuPanierComponent = (function () {
     function AjoutAuPanierComponent(recherche, route) {
         this.recherche = recherche;
@@ -25,11 +25,10 @@ var AjoutAuPanierComponent = (function () {
     };
     AjoutAuPanierComponent = __decorate([
         core_1.Component({
-            selector: 'menu',
-            templateUrl: 'templates/AffichePanier.html',
+            templateUrl: 'templates/AjoutAuPanier.html',
             styleUrls: ['styles/menu.css']
         }), 
-        __metadata('design:paramtypes', [Affiche_service_1.AfficheService, router_1.ActivatedRoute])
+        __metadata('design:paramtypes', [Recherche_service_1.RechercheService, router_1.ActivatedRoute])
     ], AjoutAuPanierComponent);
     return AjoutAuPanierComponent;
 }());

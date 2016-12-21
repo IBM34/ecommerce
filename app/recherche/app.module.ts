@@ -4,21 +4,14 @@ import { HttpModule } from '@angular/http';
 
 import { routingRecherche, appRoutingProviders }  from './app.routing';
 import { RechercheService }  from './Recherche.service';
-import { MenuComponent } from './Menu.component';
-import { RechercheMarquesComponent } from './RechercheMarques.component';
-import { RechercheTypesComponent} from './RechercheTypes.component';
-import { RechercheParMarqueComponent } from './RechercheParMarque.component';
-import { RechercheParMarquePopComponent } from './RechercheParMarquePop.component';
-import { RechercheParTypeComponent } from './RechercheParType.component';
+import { MenuRechercheComponent } from './Menu.component';
 import { AjoutAuPanierComponent} from './AjoutAuPanier.component';
-
+import { RechercheComponent} from './Recherche.component';
 
 @NgModule({
   imports:      [ BrowserModule, HttpModule,routingRecherche],
-  declarations: [ MenuComponent,RechercheMarquesComponent,RechercheTypesComponent,RechercheParMarqueComponent, RechercheParMarquePopComponent, RechercheParTypeComponent,
-  AjoutAuPanierComponent],
-  providers:    [RechercheService],
-  bootstrap:    [ MenuComponent ],
-  exports:       [MenuComponent]
+  declarations: [ MenuRechercheComponent, AjoutAuPanierComponent,RechercheComponent],
+  providers:    [ RechercheService ],
+  bootstrap:    [ MenuRechercheComponent ]
 })
 export class RechercheModule { }

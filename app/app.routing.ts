@@ -2,9 +2,14 @@ import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {routingRecherche}  from './recherche/app.routing';
 import {routingPanier}  from './panier/app.routing';
+import {MenuRechercheComponent} from './recherche/Menu.component';
+import {AffichePanierComponent} from './panier/AffichePanier.component';
+
 
 
 const appRoutes: Routes = [
+{path: 'Recherche', component: MenuRechercheComponent},
+{path: 'Panier', component: AffichePanierComponent}
 
 ];
 

@@ -15,6 +15,7 @@ var RetirePanierComponent = (function () {
     function RetirePanierComponent(recherche, route) {
         this.recherche = recherche;
         this.route = route;
+        this.titre = 'Votre Panier';
     }
     RetirePanierComponent.prototype.ngOnInit = function () {
         var _this = this;

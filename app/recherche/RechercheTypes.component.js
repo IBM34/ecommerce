@@ -21,7 +21,6 @@ var RechercheTypesComponent = (function () {
     };
     RechercheTypesComponent = __decorate([
         core_1.Component({
-            selector: 'menu',
             templateUrl: 'templates/rechercheTypes.html',
             styleUrls: ['styles/menu.css']
         }), 

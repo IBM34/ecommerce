@@ -21,7 +21,6 @@ var RechercheMarquesComponent = (function () {
     };
     RechercheMarquesComponent = __decorate([
         core_1.Component({
-            selector: 'menu',
             templateUrl: 'templates/rechercheMarques.html',
             styleUrls: ['styles/menu.css']
         }), 

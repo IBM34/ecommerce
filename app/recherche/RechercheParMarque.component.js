@@ -25,8 +25,7 @@ var RechercheParMarqueComponent = (function () {
     };
     RechercheParMarqueComponent = __decorate([
         core_1.Component({
-            selector: 'menu',
-            templateUrl: 'templates/rechercheParMarque.html',
+            templateUrl: 'templates/ResultatsRecherche.html',
             styleUrls: ['styles/menu.css']
         }), 
         __metadata('design:paramtypes', [Recherche_service_1.RechercheService, router_1.ActivatedRoute])

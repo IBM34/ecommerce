@@ -14,23 +14,17 @@ var http_1 = require('@angular/http');
 var app_routing_1 = require('./app.routing');
 var Recherche_service_1 = require('./Recherche.service');
 var Menu_component_1 = require('./Menu.component');
-var RechercheMarques_component_1 = require('./RechercheMarques.component');
-var RechercheTypes_component_1 = require('./RechercheTypes.component');
-var RechercheParMarque_component_1 = require('./RechercheParMarque.component');
-var RechercheParMarquePop_component_1 = require('./RechercheParMarquePop.component');
-var RechercheParType_component_1 = require('./RechercheParType.component');
 var AjoutAuPanier_component_1 = require('./AjoutAuPanier.component');
+var Recherche_component_1 = require('./Recherche.component');
 var RechercheModule = (function () {
     function RechercheModule() {
     }
     RechercheModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, http_1.HttpModule, app_routing_1.routingRecherche],
-            declarations: [Menu_component_1.MenuComponent, RechercheMarques_component_1.RechercheMarquesComponent, RechercheTypes_component_1.RechercheTypesComponent, RechercheParMarque_component_1.RechercheParMarqueComponent, RechercheParMarquePop_component_1.RechercheParMarquePopComponent, RechercheParType_component_1.RechercheParTypeComponent,
-                AjoutAuPanier_component_1.AjoutAuPanierComponent],
+            declarations: [Menu_component_1.MenuRechercheComponent, AjoutAuPanier_component_1.AjoutAuPanierComponent, Recherche_component_1.RechercheComponent],
             providers: [Recherche_service_1.RechercheService],
-            bootstrap: [Menu_component_1.MenuComponent],
-            exports: [Menu_component_1.MenuComponent]
+            bootstrap: [Menu_component_1.MenuRechercheComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], RechercheModule);

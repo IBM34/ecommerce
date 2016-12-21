@@ -1,0 +1,10 @@
+<h1> {{titre}} </h1> <br/>
+
+<input [routerLink]="['/Recherche']" type="button" id="demo"
+  value="Recherche" class="button">
+<input [routerLink]="['/Panier']" type="button" id="demo"
+   value="Panier" class="button">
+
+<router-outlet></router-outlet>
+
+

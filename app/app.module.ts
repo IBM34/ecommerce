@@ -10,8 +10,6 @@ import {routingPanier} from './panier/app.routing';
 import { routing, appRoutingProviders}  from './app.routing';
 import { PrincipalComponent } from './Principal.component';
 
-
-
 @NgModule({
   imports:      [ BrowserModule, HttpModule, RechercheModule, PanierModule, routing, routingRecherche, routingPanier],
   declarations: [PrincipalComponent],

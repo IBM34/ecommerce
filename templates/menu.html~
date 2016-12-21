@@ -1,0 +1,33 @@
+<div id="menu" style="text-align:center">
+<h1> {{titre}} </h1> <br/>
+<nav>
+  <a [routerLink]="['/rechercheMarques']"> Recherche par marques </a> <br/>
+  <a [routerLink]="['/rechercheTypes']"> Recherche par types </a>
+  <br/><br/>
+  <input (keyup)="setMarque(choixMarque.value)" value="Apple" #choixMarque />
+  <a [routerLink]="['/rechercheParMarque', marque]"> Recherche par marque </a>
+<br/>
+<br/>
+ <input (keyup)="setType(choixType.value)" value="telephone" #choixType />
+  <a [routerLink]="['/rechercheParType', type]"> Recherche par type </a>
+<br/><br/>
+<div id="recherche">
+<input (keyup)="setNom(Nom.value)" placeholder="Entrez un nom de produit" #Nom />
+
+<select class="form-control" (change)="setMarque(Marque.value)" name="Marque" #Marque>
+  <option value="" disabled selected>Trier par marques</option>
+  <option value="" >Toutes</option> 
+  <option *ngFor="let item of items" [value]="item.marque">{{ item.marque }}</option>
+</select>
+<select class="form-control" (change)="setType(Type.value)" name="Type" #Type>
+  <option value="" disabled selected>Trier par types</option>
+  <option value="" >Tous</option> 
+  <option *ngFor="let item of items" [value]="item.type">{{ item.type }}</option>
+</select>
+<input [routerLink]="['/recherche', nom,marque,type]" type="button" id="demo" value="Recherche" class="button">
+</div>
+</nav>
+<br/>
+</div>
+<router-outlet></router-outlet>
+

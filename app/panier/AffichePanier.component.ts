@@ -3,12 +3,12 @@ import {ActivatedRoute} from '@angular/router';
 import { AfficheService } from './Affiche.service';
 
 @Component({
-	selector: 'menu2',
 	templateUrl: 'templates/AffichePanier.html',
 	styleUrls: ['styles/menu.css']
 })
 
 export class AffichePanierComponent {
+titre = 'Votre Panier';
 public items :any;
        public constructor(private recherche :AfficheService) {}
 

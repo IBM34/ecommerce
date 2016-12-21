@@ -1,0 +1,23 @@
+<div id="menu" style="text-align:center">
+<h1> {{titre}} </h1> <br/>
+<nav>
+<div id="recherche">
+<input (keyup)="setNom("/"+Nom.value+"/")" placeholder="Entrez un nom de produit" #Nom />
+
+<select class="form-control" (change)="setMarque(Marque.value)" name="Marque" #Marque>
+  <option value="" disabled selected>Trier par marques</option>
+  <option value="" >Toutes</option> 
+  <option *ngFor="let item of items" [value]="/item.marque/">{{ item.marque }}</option>
+</select>
+<select class="form-control" (change)="setType(Type.value)" name="Type" #Type>
+  <option value="" disabled selected>Trier par types</option>
+  <option value="" >Tous</option> 
+  <option *ngFor="let item of items" [value]="/item.type/">{{ item.type }}</option>
+</select>
+<input [routerLink]="['/recherche', nom,marque,type]" type="button" id="demo" value="Recherche" class="button">
+</div>
+</nav>
+<br/>
+</div>
+<router-outlet></router-outlet>
+

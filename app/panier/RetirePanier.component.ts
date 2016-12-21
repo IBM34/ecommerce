@@ -8,6 +8,7 @@ import { AfficheService } from './Affiche.service';
 })
 
 export class RetirePanierComponent {
+titre = 'Votre Panier';
 public items :any;
        public constructor(private recherche :AfficheService, private route: ActivatedRoute) {}
 

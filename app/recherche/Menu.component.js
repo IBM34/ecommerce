@@ -9,38 +9,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var MenuComponent = (function () {
-    function MenuComponent() {
+var Recherche_service_1 = require('./Recherche.service');
+var MenuRechercheComponent = (function () {
+    function MenuRechercheComponent(recherche) {
+        this.recherche = recherche;
         this.titre = 'Recherche sur les produits';
-        this.marque = 'Apple';
-        this.type = 'telephone';
         this.prixmin = 0;
         this.prixmax = 1000;
     }
-    MenuComponent.prototype.setMarque = function (value) {
+    MenuRechercheComponent.prototype.setMarque = function (value) {
         this.marque = value;
     };
-    MenuComponent.prototype.setType = function (value) {
+    MenuRechercheComponent.prototype.setType = function (value) {
         this.type = value;
     };
-    MenuComponent.prototype.setNom = function (value) {
+    MenuRechercheComponent.prototype.setNom = function (value) {
         this.nom = value;
     };
-    MenuComponent.prototype.setPrixmin = function (value) {
-        this.prixmin = value;
+    MenuRechercheComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.recherche.getJSON("paramRecherche")
+            .subscribe(function (res) { return _this.items = res; }, function (err) { return console.error(err); }, function () { return console.log('done'); });
     };
-    MenuComponent.prototype.setPrixmax = function (value) {
-        this.prixmax = value;
-    };
-    MenuComponent = __decorate([
+    MenuRechercheComponent = __decorate([
         core_1.Component({
             selector: 'menu',
-            templateUrl: 'templates/menu.html',
+            templateUrl: 'templates/menuRecherche.html',
             styleUrls: ['styles/menu.css']
         }), 
-        __metadata('design:paramtypes', [])
-    ], MenuComponent);
-    return MenuComponent;
+        __metadata('design:paramtypes', [Recherche_service_1.RechercheService])
+    ], MenuRechercheComponent);
+    return MenuRechercheComponent;
 }());
-exports.MenuComponent = MenuComponent;
+exports.MenuRechercheComponent = MenuRechercheComponent;
 //# sourceMappingURL=Menu.component.js.map

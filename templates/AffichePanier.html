@@ -1,6 +1,4 @@
-<script>
-var total= 2;
-</script>
+<h1> {{titre}} </h1> <br/>
 <div id="Produits" *ngFor="let item of items">
 <div id="Produit">
   <HR size=2px>
@@ -13,18 +11,9 @@ var total= 2;
         <p>Marque : {{ item.marque }}</p>
 	<p>Prix : {{ item.price }} euros</p>
 	<p>Quantitée : {{ item.quantite }}</p>
-
-
-
   <input [routerLink]="['/retirerPanier', item.id]" type="button" [name]= "item.id" value="Retirer du panier" class="button" />
 	</div>
-	<script>
-	total =  {{ item.quantite  * item.price }}
-	</script>
 </div>
 </div>
-<script>
-alert(total);
-</script>
+<router-outlet></router-outlet>
 
-<HR size=2px>

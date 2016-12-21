@@ -13,6 +13,7 @@ var Affiche_service_1 = require('./Affiche.service');
 var AffichePanierComponent = (function () {
     function AffichePanierComponent(recherche) {
         this.recherche = recherche;
+        this.titre = 'Votre Panier';
     }
     AffichePanierComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -21,7 +22,6 @@ var AffichePanierComponent = (function () {
     };
     AffichePanierComponent = __decorate([
         core_1.Component({
-            selector: 'menu2',
             templateUrl: 'templates/AffichePanier.html',
             styleUrls: ['styles/menu.css']
         }), 

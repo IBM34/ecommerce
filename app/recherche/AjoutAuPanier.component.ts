@@ -1,16 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import { AfficheService } from '../panier/Affiche.service';
+import {RechercheService } from './Recherche.service';
 
 @Component({
-	selector: 'menu',
-	templateUrl: 'templates/AffichePanier.html',
+	templateUrl: 'templates/AjoutAuPanier.html',
 	styleUrls: ['styles/menu.css']
 })
 
 export class AjoutAuPanierComponent {
 public items :any;
-       public constructor(private recherche :AfficheService, private route: ActivatedRoute) {}
+       public constructor(private recherche :RechercheService, private route: ActivatedRoute) {}
 
   ngOnInit() {
 

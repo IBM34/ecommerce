@@ -6,10 +6,6 @@ var assert = require('assert');
 var ObjectId = require('mongodb').ObjectID;
 var url = 'mongodb://localhost:27017/newBase2';
 
-/*var cors = require('cors');
-app.use(cors);*/
-
-
 var findProducts = function (db,search,callback){
 					var cursor = db.collection('Produits').find(search);
 					var resultat = [];
@@ -56,9 +52,7 @@ var retirePanier = function (db,search,callback, res){
 						res.end(json);
 						},res)
 
-
 };
-
 
 var ajoutPanier = function (db,search,callback, res){
 					var cursor = db.collection('Produits').find(search);
@@ -71,76 +65,21 @@ var ajoutPanier = function (db,search,callback, res){
 							console.log(p+"   :    "+doc[p]);
 							}
 						}
-
 						else {
 
 						db.collection('Panier').insert(resultat[0]);
 
-						var search={};
-						affichePanier(db,search, function(ProductSearch){
-							res.setHeader('Access-Control-Allow-Origin','*');
-							res.setHeader('Content-Type','application/json');
-							var json = JSON.stringify(ProductSearch);
-							res.end(json);
-							},res)}
+						}
 
 						console.log("\n");
 					});
 };
 
-
-
-
-
 MongoClient.connect(url,function(err,db){
 
 	assert.equal(null,err);
 
-/*
- 	app.use(function(req, res){
-		res.header('Access-Control-Allow-Origin','*');
-		res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
-		res.header('Access-Control-Allow-Headers', 'Content-Type');
-		next();
-	})
-*/
-
-	app.get('/products/marque/:marque',function(req,res){
-				var marqueAChercher = req.params.marque;
-				console.log("serveur node : /products/marque/"+marqueAChercher);
-				var search = {"marque" : marqueAChercher};
-				findProducts(db,search, function(ProductSearch){
-					res.setHeader('Access-Control-Allow-Origin','*');
-					res.setHeader('Content-Type','application/json');
-					var json = JSON.stringify(ProductSearch);
-					res.end(json);
-	  			})
-		});
-
-
-        app.get('/products/type/:type',function(req,res){
-				var typeAChercher = req.params.type;
-				console.log("serveur node : /products/type/"+typeAChercher);
-				var search = {"type" : typeAChercher};
-				findProducts(db,search, function(ProductSearch){
-					res.setHeader('Access-Control-Allow-Origin','*');
-					res.setHeader('Content-Type','application/json');
-					var json = JSON.stringify(ProductSearch);
-					res.end(json);
-	  			})
-		});
-        app.get('/products/types/',function(req,res){
-				var typesAChercher = req.params.type;
-				console.log("serveur node : /products/types/");
-				var search = {};
-				findProducts(db,search, function(ProductSearch){
-					res.setHeader('Access-Control-Allow-Origin','*');
-					res.setHeader('Content-Type','application/json');
-					var json = JSON.stringify(ProductSearch);
-					res.end(json);
-	  			})
-		});
-      app.get('/products/marques/',function(req,res){
+  app.get('/products/paramRecherche/',function(req,res){
 				var marquesAChercher = req.params.type;
 				console.log("serveur node : /products/marques/");
 				var search = {};
@@ -151,6 +90,30 @@ MongoClient.connect(url,function(err,db){
 					res.end(json);
 	  			})
 		});
+
+app.get('/products/produits/:nom/:marque/:type',function(req,res){
+	var nomAChercher = req.params.nom;
+	var marqueAChercher = req.params.marque;
+        var typeAChercher = req.params.type;
+  console.log("serveur node : /products/produits/"+nomAChercher+"/"+marqueAChercher+"/"+typeAChercher);
+	var param = []; 
+	if (nomAChercher != "undefined") {
+		param.push({ "nom" : {'$regex': nomAChercher }});
+	}
+        if (marqueAChercher != "undefined"){
+		param.push({ "marque" : marqueAChercher });
+	}
+        if (typeAChercher != "undefined"){
+		param.push({ "type" : typeAChercher });
+	}
+	var search = { $and: param }
+	findProducts(db,search, function(ProductSearch){
+		res.setHeader('Access-Control-Allow-Origin','*');
+		res.setHeader('Content-Type','application/json');
+		var json = JSON.stringify(ProductSearch);
+		res.end(json);
+}, res)
+});
 
   app.get('/panier/ids/',function(req,res){
 			var produitsAafficher = req.params.type;
@@ -176,7 +139,7 @@ MongoClient.connect(url,function(err,db){
 	}, res)
 });
 
-	app.get('/panier/ajout/:id',function(req,res){
+	app.get('/products/ajout/:id',function(req,res){
 	var idAChercher = req.params.id;
   console.log("serveur node : /panier/id/"+idAChercher);
 	var search = {"id" : idAChercher};
@@ -188,8 +151,6 @@ MongoClient.connect(url,function(err,db){
 }, res)
 });
 
-
 });
-
 
 app.listen(7040);

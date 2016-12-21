@@ -3,7 +3,7 @@ import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: "principal",
-	templateUrl: 'templates/venteapp.html',
+	templateUrl: 'templates/ecommerce.html',
 	styleUrls: ['styles/menu.css']
 })
 

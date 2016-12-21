@@ -16,7 +16,7 @@ var PrincipalComponent = (function () {
     PrincipalComponent = __decorate([
         core_1.Component({
             selector: "principal",
-            templateUrl: 'templates/venteapp.html',
+            templateUrl: 'templates/ecommerce.html',
             styleUrls: ['styles/menu.css']
         }), 
         __metadata('design:paramtypes', [])

@@ -13,7 +13,6 @@ var platform_browser_1 = require('@angular/platform-browser');
 var http_1 = require('@angular/http');
 var app_routing_1 = require('./app.routing');
 var Affiche_service_1 = require('./Affiche.service');
-var Menu_component_1 = require('./Menu.component');
 var AffichePanier_component_1 = require('./AffichePanier.component');
 var RetirePanier_component_1 = require('./RetirePanier.component');
 var PanierModule = (function () {
@@ -22,10 +21,9 @@ var PanierModule = (function () {
     PanierModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, http_1.HttpModule, app_routing_1.routingPanier],
-            declarations: [Menu_component_1.MenuComponent, AffichePanier_component_1.AffichePanierComponent, RetirePanier_component_1.RetirePanierComponent],
+            declarations: [AffichePanier_component_1.AffichePanierComponent, RetirePanier_component_1.RetirePanierComponent],
             providers: [Affiche_service_1.AfficheService],
-            bootstrap: [Menu_component_1.MenuComponent],
-            exports: [Menu_component_1.MenuComponent]
+            bootstrap: [AffichePanier_component_1.AffichePanierComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], PanierModule);

@@ -1,0 +1,21 @@
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
+
+import { routingPanier, appRoutingProviders}  from './app.routing';
+
+
+import { AfficheService }  from './Affiche.service';
+import { MenuPanierComponent } from './Menu.component';
+import { AffichePanierComponent } from './AffichePanier.component';
+import { RetirePanierComponent } from './RetirePanier.component';
+
+
+@NgModule({
+  imports:      [ BrowserModule, HttpModule, routingPanier],
+  declarations: [ MenuPanierComponent,AffichePanierComponent, RetirePanierComponent],
+  providers:    [AfficheService],
+  bootstrap:    [ MenuPanierComponent ]
+
+})
+export class PanierModule { }
