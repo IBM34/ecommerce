@@ -6,12 +6,12 @@
 
 <select class="form-control" (change)="setMarque(Marque.value)" name="Marque" #Marque style="height:35px" >
   <option value="" disabled selected>Trier par marques</option>
-  <option value="" >Toutes</option> 
+  <option value="undefined" >Toutes</option> 
   <option *ngFor="let item of items" [value]="item.marque">{{ item.marque }}</option>
 </select>
 <select class="form-control" (change)="setType(Type.value)" name="Type" #Type style="height:35px">
   <option value="" disabled selected>Trier par types</option>
-  <option value="" >Tous</option> 
+  <option value="undefined" >Tous</option> 
   <option *ngFor="let item of items" [value]="item.type">{{ item.type }}</option>
 </select>
 <input (keyup)="setPrixMin(PrixMin.value)" placeholder="Prix min" size="6" #PrixMin style=" height:30px"/>

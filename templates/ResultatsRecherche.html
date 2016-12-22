@@ -3,12 +3,13 @@
 <div id="titre" style="text-align:center">
    <b>Liste des Produits</b>
 </div>
+<br/>
 <div id="Produit" *ngFor="let item of items">
-    <HR size=2px>
+<HR size=2px>
 	<div id="imageProduit" >
 		<img [src]="item.url" style="width:304px;height:228px;">
+		 
 	</div>
-
 	<div id="caract">
 	<p>Nom du produit : {{ item.nom }} </p>
 	<p>Type : {{ item.type }}</p>
@@ -17,6 +18,7 @@
 	<input [routerLink]="['/ajoutPanier', item.id]" type="button" id="demo"
   [name]= "item.id" value="Ajouter au panier" class="button">
 	</div>
+
 </div>
 </div>
 
