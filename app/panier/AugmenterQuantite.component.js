@@ -9,28 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var Affiche_service_1 = require('./Affiche.service');
-var AffichePanierComponent = (function () {
-    function AffichePanierComponent(recherche) {
+var AugmenterQuantiteComponent = (function () {
+    function AugmenterQuantiteComponent(recherche, route) {
         this.recherche = recherche;
+        this.route = route;
         this.titre = 'Votre Panier';
     }
-    AffichePanierComponent.prototype.UpdateTotal = function (price, quantite) {
-        this.total = this.total + (price * quantite);
-    };
-    AffichePanierComponent.prototype.ngOnInit = function () {
+    AugmenterQuantiteComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.recherche.getJSON("ids")
-            .subscribe(function (res) { return _this.items = res; }, function (err) { return console.error(err); }, function () { return console.log('done'); });
+        this.route.params.subscribe(function (params) {
+            _this.recherche.getJSON("augmenter/" + params['id'])
+                .subscribe(function (res) { return _this.items = res; }, function (err) { return console.error(err); }, function () { return console.log('done'); });
+        });
     };
-    AffichePanierComponent = __decorate([
+    AugmenterQuantiteComponent = __decorate([
         core_1.Component({
             templateUrl: 'templates/AffichePanier.html',
             styleUrls: ['styles/menu.css']
         }), 
-        __metadata('design:paramtypes', [Affiche_service_1.AfficheService])
-    ], AffichePanierComponent);
-    return AffichePanierComponent;
+        __metadata('design:paramtypes', [Affiche_service_1.AfficheService, router_1.ActivatedRoute])
+    ], AugmenterQuantiteComponent);
+    return AugmenterQuantiteComponent;
 }());
-exports.AffichePanierComponent = AffichePanierComponent;
-//# sourceMappingURL=AffichePanier.component.js.map
+exports.AugmenterQuantiteComponent = AugmenterQuantiteComponent;
+//# sourceMappingURL=AugmenterQuantite.component.js.map

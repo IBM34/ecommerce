@@ -7,29 +7,18 @@ import { AfficheService } from './Affiche.service';
 	styleUrls: ['styles/menu.css']
 })
 
-
-export class AffichePanierComponent {
+export class AugmenterQuantiteComponent {
 titre = 'Votre Panier';
-total : number;
-
-isNull(value : number)
-{
-	return !(value == 0);
-}
-
-UpdateTotal(price :number, quantite : number){
-       		       this.total= this.total + (price * quantite);
-       }
-
 public items :any;
-       public constructor(private recherche :AfficheService) {}
+       public constructor(private recherche :AfficheService, private route: ActivatedRoute) {}
 
   ngOnInit() {
-       		  
-                    this.recherche.getJSON("ids")
+
+              this.route.params.subscribe(params =>{
+                    this.recherche.getJSON("augmenter/"+params['id'])
 		    .subscribe(res => this.items = res,
        				       err => console.error(err),
        				       	   () => console.log('done'));
-
-}
-}
+                         })
+                         }
+                         }

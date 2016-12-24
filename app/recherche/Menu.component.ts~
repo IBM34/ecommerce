@@ -28,7 +28,7 @@ export class MenuRechercheComponent{
        this.prixmin=value;
        }
        setPrixMax(value :number){
-       this.prixmin=value;
+       this.prixmax=value;
        }
     
 public items :any;

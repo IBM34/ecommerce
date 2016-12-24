@@ -15,13 +15,15 @@ var app_routing_1 = require('./app.routing');
 var Affiche_service_1 = require('./Affiche.service');
 var AffichePanier_component_1 = require('./AffichePanier.component');
 var RetirePanier_component_1 = require('./RetirePanier.component');
+var AugmenterQuantite_component_1 = require('./AugmenterQuantite.component');
+var ReduireQuantite_component_1 = require('./ReduireQuantite.component');
 var PanierModule = (function () {
     function PanierModule() {
     }
     PanierModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, http_1.HttpModule, app_routing_1.routingPanier],
-            declarations: [AffichePanier_component_1.AffichePanierComponent, RetirePanier_component_1.RetirePanierComponent],
+            declarations: [AffichePanier_component_1.AffichePanierComponent, RetirePanier_component_1.RetirePanierComponent, AugmenterQuantite_component_1.AugmenterQuantiteComponent, ReduireQuantite_component_1.ReduireQuantiteComponent],
             providers: [Affiche_service_1.AfficheService],
             bootstrap: [AffichePanier_component_1.AffichePanierComponent]
         }), 

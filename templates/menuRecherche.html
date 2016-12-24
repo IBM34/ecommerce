@@ -9,11 +9,13 @@
   <option value="undefined" >Toutes</option> 
   <option *ngFor="let item of items" [value]="item.marque">{{ item.marque }}</option>
 </select>
+
 <select class="form-control" (change)="setType(Type.value)" name="Type" #Type style="height:35px">
   <option value="" disabled selected>Trier par types</option>
   <option value="undefined" >Tous</option> 
   <option *ngFor="let item of items" [value]="item.type">{{ item.type }}</option>
 </select>
+
 <input (keyup)="setPrixMin(PrixMin.value)" placeholder="Prix min" size="6" #PrixMin style=" height:30px"/>
 <input (keyup)="setPrixMax(PrixMax.value)" placeholder="Prix max" size="6" #PrixMax style=" height:30px"/>
 <input [routerLink]="['/recherche', nom, marque,type, prixmin, prixmax]" type="button" id="demo" value="Rechercher" style=" height:45px" class="button">

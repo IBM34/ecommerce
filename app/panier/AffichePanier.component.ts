@@ -10,6 +10,12 @@ import { AfficheService } from './Affiche.service';
 
 export class AffichePanierComponent {
 titre = 'Votre Panier';
+total : number;
+
+UpdateTotal(price :number, quantite : number){
+       		       this.total= this.total + (price * quantite);
+       }
+
 public items :any;
        public constructor(private recherche :AfficheService) {}
 

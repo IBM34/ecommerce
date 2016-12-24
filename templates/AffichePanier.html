@@ -9,16 +9,22 @@
 	<div id="imageProduit" >
 		<img [src]="item.url" style="width:304px;height:228px;">		
 	</div>
-	<div id="caract">
+	<div id="caract" (change)="UpdateTotal(Type.value)">
 	<p>Nom du produit : {{ item.nom }} </p>
 	<p>Type : {{ item.type }}</p>
         <p>Marque : {{ item.marque }}</p>
 	<p>Prix : {{ item.price }} euros</p>
-	<p>Quantitée : {{ item.quantite }}</p>
+	<p>
+	Quantitée : {{ item.quantite }} 
+	<input  [routerLink]="['/reduireQuant', item.id]" type="button" [name]= "item.id" value="-" class="button" />
+        <input [routerLink]="['/augmenterQuant', item.id]" type="button" [name]= "item.id" value="+" class="button" />
+	</p>
+	UpdateTotal( {{ item.price }} , {{ item.quantite }} )
 	
-  <input [routerLink]="['/retirerPanier', item.id]" type="button" [name]= "item.id" value="Retirer du panier" class="button" />
+        <input [routerLink]="['/retirerPanier', item.id]" type="button" [name]= "item.id" value="Retirer du panier" class="button" />
 	</div>
 </div>
+<p> Total du panier : {{ total }}</p>
 </div>
 <router-outlet></router-outlet>
 
