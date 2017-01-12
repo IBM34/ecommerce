@@ -14,6 +14,7 @@ var AffichePanierComponent = (function () {
     function AffichePanierComponent(recherche) {
         this.recherche = recherche;
         this.titre = 'Votre Panier';
+        this.total = 0;
     }
     AffichePanierComponent.prototype.UpdateTotal = function (price, quantite) {
         this.total = this.total + (price * quantite);

@@ -3,7 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import { AfficheService } from './Affiche.service';
 
 @Component({
-	templateUrl: 'templates/AffichePanier.html',
+        template: '<br/><br/><h2> La quantité a été augmentée</h2>',
 	styleUrls: ['styles/menu.css']
 })
 

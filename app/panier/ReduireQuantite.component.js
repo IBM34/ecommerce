@@ -26,7 +26,7 @@ var ReduireQuantiteComponent = (function () {
     };
     ReduireQuantiteComponent = __decorate([
         core_1.Component({
-            templateUrl: 'templates/AffichePanier.html',
+            template: '<br/><br/><h2>La quantitée a été réduite</h2>',
             styleUrls: ['styles/menu.css']
         }), 
         __metadata('design:paramtypes', [Affiche_service_1.AfficheService, router_1.ActivatedRoute])

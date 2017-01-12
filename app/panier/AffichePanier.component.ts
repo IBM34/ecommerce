@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import { AfficheService } from './Affiche.service';
 
+
 @Component({
 	templateUrl: 'templates/AffichePanier.html',
 	styleUrls: ['styles/menu.css']
@@ -10,7 +11,7 @@ import { AfficheService } from './Affiche.service';
 
 export class AffichePanierComponent {
 titre = 'Votre Panier';
-total : number;
+total = 0;
 
 UpdateTotal(price :number, quantite : number){
        		       this.total= this.total + (price * quantite);

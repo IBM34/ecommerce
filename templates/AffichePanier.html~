@@ -16,15 +16,17 @@
 	<p>Prix : {{ item.price }} euros</p>
 	<p>
 	Quantitée : {{ item.quantite }} 
-	<input  [disabled]="isNull(item.quantite)" [routerLink]="['/reduireQuant', item.id]" type="button" [name]= "item.id" value="-" class="button" />
+	<input  [routerLink]="['/reduireQuant', item.id]" type="button" [name]= "item.id" value="-" class="button" />
         <input [routerLink]="['/augmenterQuant', item.id]" type="button" [name]= "item.id" value="+" class="button" />
 	</p>
-	UpdateTotal( {{ item.price }} , {{ item.quantite }} )
+	<b> Sous-Total : {{ item . price * item.quantite}} euros</b><br/><br/>
+	{{ UpdateTotal(item.price,item.quantite)}}
 	
         <input [routerLink]="['/retirerPanier', item.id]" type="button" [name]= "item.id" value="Retirer du panier" class="button" />
 	</div>
 </div>
-<p> Total du panier : {{ total }}</p>
+<HR size=2px>
+<h2> TOTAL : {{ total }} euros</h2>
 </div>
 <router-outlet></router-outlet>
 
