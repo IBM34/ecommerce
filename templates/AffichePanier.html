@@ -20,13 +20,12 @@
         <input [routerLink]="['/augmenterQuant', item.id]" type="button" [name]= "item.id" value="+" class="button" />
 	</p>
 	<b> Sous-Total : {{ item . price * item.quantite}} euros</b><br/><br/>
-	{{ UpdateTotal(item.price,item.quantite)}}
 	
         <input [routerLink]="['/retirerPanier', item.id]" type="button" [name]= "item.id" value="Retirer du panier" class="button" />
 	</div>
 </div>
 <HR size=2px>
-<h3> TOTAL : {{ total }} euros</h3>
+<br/>
 </div>
 <router-outlet></router-outlet>
 

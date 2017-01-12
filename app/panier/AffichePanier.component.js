@@ -16,9 +16,6 @@ var AffichePanierComponent = (function () {
         this.titre = 'Votre Panier';
         this.total = 0;
     }
-    AffichePanierComponent.prototype.UpdateTotal = function (price, quantite) {
-        this.total = this.total + (price * quantite);
-    };
     AffichePanierComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.recherche.getJSON("ids")
